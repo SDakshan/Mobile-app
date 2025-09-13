@@ -1,6 +1,7 @@
-// src/firebase.js
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
+// 🔐 Replace this with your actual Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyB414eK7e1yrf9eS5lOLJjEN8w9WpwG3FQ",
   authDomain: "mobile-app-dac4c.firebaseapp.com",
@@ -11,6 +12,10 @@ const firebaseConfig = {
 };
 
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log('Firebase Initialized:', app);
-export default app;
+
+// Initialize Firestore
+const db = getFirestore(app);
+
+export { db };

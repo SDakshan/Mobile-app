@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Registration from './components/Registration';
 import About from './components/About';
+import './firebase'; // This ensures the config runs and logs to console
 
 function App() {
   return (
