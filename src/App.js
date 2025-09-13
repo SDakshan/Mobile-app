@@ -1,9 +1,14 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+
 import Home from './components/Home';
 import Registration from './components/Registration';
 import About from './components/About';
 import './firebase'; // This ensures the config runs and logs to console
+import UserList from './components/userlist';
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+
 
 function App() {
   return (
@@ -14,7 +19,9 @@ function App() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
             <li className="nav-item"><Link to="/registration" className="nav-link">Register</Link></li>
+            <li className="nav-item"><Link to="/users" className="nav-link">User</Link></li>
             <li className="nav-item"><Link to="/about" className="nav-link">About</Link></li>
+            
           </ul>
         </div>
       </nav>
@@ -23,6 +30,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/about" element={<About />} />
+        <Route path="/users" element={<UserList />} />
+
+
       </Routes>
     </div>
   );
